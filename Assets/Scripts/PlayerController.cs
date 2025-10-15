@@ -9,9 +9,13 @@ public class PlayerController : MonoBehaviour
     private Animator animator;
     private Vector2 playerDirection;
     public float boost = 1f;
+    private bool boosting = false;
 
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float boostMultiplier = 4f;
+    [SerializeField] private float energy;
+    [SerializeField] private float maxEnergy;
+    [SerializeField] private float energyRegen;
 
     private void Awake()
     {
@@ -26,6 +30,8 @@ public class PlayerController : MonoBehaviour
         inputSystem_Actions = new InputSystem_Actions();
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        energy = maxEnergy;
+        UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
     }
 
     private void OnEnable()
@@ -72,6 +78,24 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         rb.MovePosition((Vector2)transform.position + playerDirection * moveSpeed * Time.fixedDeltaTime);
+
+        if (boosting)
+        {
+            if (energy > 0.2f) energy -= 0.2f;
+            else
+            {
+                boost = 1f;
+                boosting = false;
+            }
+        }
+        else
+        {
+            if (energy < maxEnergy)
+            {
+                energy += energyRegen;
+            }
+        }
+        UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
     }
 
     private void OnMove(InputAction.CallbackContext context)
@@ -87,10 +111,12 @@ public class PlayerController : MonoBehaviour
     private void OnBoostStarted(InputAction.CallbackContext context)
     {
         boost = boostMultiplier;
+        boosting = true;
     }
 
     private void OnBoostCanceled(InputAction.CallbackContext context)
     {
         boost = 1f;
+        boosting = false;
     }
 }
