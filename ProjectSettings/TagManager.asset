@@ -11,9 +11,9 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
+  - Player
+  - LevelBoundaries
+  - Obstacle
   - 
   - 
   - 
@@ -43,6 +43,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 417097703
+    locked: 0
+  - name: Objects
+    uniqueID: 1229125551
     locked: 0
   - name: Player
     uniqueID: 3340821509

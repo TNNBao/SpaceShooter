@@ -31,6 +31,10 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         energy = maxEnergy;
+    }
+
+    private void Start()
+    {  
         UIController.Instance.UpdateEnergySlider(energy, maxEnergy);
     }
 
