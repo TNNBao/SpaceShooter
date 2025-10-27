@@ -600,11 +600,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766828510098112515, guid: 2bb8e66874f598c4894627c6e1f001e8, type: 3}
       propertyPath: m_text
-      value: Explorer
+      value: Over
       objectReference: {fileID: 0}
     - target: {fileID: 5766828510098112515, guid: 2bb8e66874f598c4894627c6e1f001e8, type: 3}
       propertyPath: m_fontSize
-      value: 65.15
+      value: 75.15
       objectReference: {fileID: 0}
     - target: {fileID: 5766828510098112515, guid: 2bb8e66874f598c4894627c6e1f001e8, type: 3}
       propertyPath: m_fontStyle
@@ -989,7 +989,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5766828510098112515, guid: 2bb8e66874f598c4894627c6e1f001e8, type: 3}
       propertyPath: m_text
-      value: Space
+      value: Game
       objectReference: {fileID: 0}
     - target: {fileID: 5766828510098112515, guid: 2bb8e66874f598c4894627c6e1f001e8, type: 3}
       propertyPath: m_fontSize
