@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float energy;
     [SerializeField] private float maxEnergy;
     [SerializeField] private float energyRegen;
+    [SerializeField] private GameObject destroyEffect;
 
     private void Awake()
     {
@@ -67,15 +68,19 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        animator.SetFloat("moveX", playerDirection.x);
-        animator.SetFloat("moveY", playerDirection.y);
-        if (boost > 1f)
+        if (Time.timeScale > 0)
         {
-            animator.SetBool("boosting", true);
-        }
-        else
-        {
-            animator.SetBool("boosting", false);
+            animator.SetFloat("moveX", playerDirection.x);
+            animator.SetFloat("moveY", playerDirection.y);
+
+            if (boost > 1f)
+            {
+                animator.SetBool("boosting", true);
+            }
+            else
+            {
+                animator.SetBool("boosting", false);
+            }
         }
     }
 
@@ -122,5 +127,20 @@ public class PlayerController : MonoBehaviour
     {
         boost = 1f;
         boosting = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            Explode();
+        }
+    }
+
+    private void Explode()
+    {
+        boost = 0f;
+        gameObject.SetActive(false);
+        Instantiate(destroyEffect, transform.position, transform.rotation);
     }
 }

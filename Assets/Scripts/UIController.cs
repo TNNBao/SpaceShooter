@@ -9,6 +9,7 @@ public class UIController : MonoBehaviour
     [SerializeField] private Slider energySlider;
     [SerializeField] private TMP_Text energyText;
     [SerializeField] private TMP_Text scoreText;
+    public GameObject pausePanel;
 
     private void Awake()
     {
