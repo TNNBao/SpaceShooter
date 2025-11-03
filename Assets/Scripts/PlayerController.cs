@@ -81,6 +81,13 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("boosting", false);
             }
+
+            if (Keyboard.current == null) return; 
+
+            if (Keyboard.current.kKey.wasPressedThisFrame)
+            {
+                PhaserWeapon.Instance.Shoot();
+            }
         }
     }
 

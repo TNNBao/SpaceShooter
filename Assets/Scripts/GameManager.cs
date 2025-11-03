@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance;
 
     public float worldSpeed;
+    public float timeToIncrease = 10f;
+    public float speedIncreaseAmount = 1f;
 
     private void Awake()
     {
@@ -21,14 +23,25 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        InvokeRepeating("IncreaseDifficulty", timeToIncrease, timeToIncrease);
+    }
+
     private void Update()
     {
-        if (Keyboard.current == null) return; 
+        if (Keyboard.current == null) return;
 
         if (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame)
         {
             Pause();
         }
+    }
+
+    private void IncreaseDifficulty()
+    {
+        worldSpeed += speedIncreaseAmount;
+        Debug.Log("Update World Speed: " + worldSpeed);
     }
 
     public void Pause()

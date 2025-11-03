@@ -11,6 +11,14 @@ public class ObjectSpawner : MonoBehaviour
     public GameObject star;
     public float spawnTimer;
     public float spawnInterval;
+    public float difficultyIncreaseInterval = 15f;
+    public float spawnIntervalReduction = 0.2f;
+    public float minSpawnInterval = 0.5f;
+
+    void Start()
+    {
+        InvokeRepeating("IncreaseSpawnRate", difficultyIncreaseInterval, difficultyIncreaseInterval);
+    }
 
     void Update()
     {
@@ -21,6 +29,12 @@ public class ObjectSpawner : MonoBehaviour
             SpawnRandomAsteroid();
             SpawnStar();
         }
+    }
+
+    private void IncreaseSpawnRate()
+    {
+        spawnInterval = Mathf.Max(minSpawnInterval, spawnInterval - spawnIntervalReduction);
+        Debug.Log("Update Spawn Interval: " + spawnInterval);
     }
 
     private void SpawnRandomAsteroid()

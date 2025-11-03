@@ -24,6 +24,14 @@ public class Star : MonoBehaviour
             UIController.Instance.UpdateScore(scoreValue);
 
             Destroy(gameObject);
+        } 
+        else if (other.CompareTag("Bullet"))
+        {
+            UIController.Instance.UpdateScore(scoreValue);
+            
+            Destroy(other.gameObject); 
+            
+            Destroy(gameObject);
         }
     }
 }

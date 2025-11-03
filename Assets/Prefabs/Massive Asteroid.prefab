@@ -132,6 +132,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6b83bced2a849443a9c4c619c27d4da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Asteroid
+  size: 0
+  bigAsteroidPrefab: {fileID: 3969659506886953125, guid: d524a7c617058274493f7b91c3bd646b, type: 3}
+  smallAsteroidPrefab: {fileID: 8262099518468048927, guid: 176e3e799690f1a4a8c5d870e2fc245f, type: 3}
   sprites:
   - {fileID: 21300000, guid: ac3df446e68a8364286b1606f05caa85, type: 3}
 --- !u!60 &-345064690749988082

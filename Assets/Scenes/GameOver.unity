@@ -648,7 +648,7 @@ PrefabInstance:
       objectReference: {fileID: 21300000, guid: d58ea0aed40257542b9386baaeaedd9d, type: 3}
     - target: {fileID: 5471108101962332402, guid: 4f77437592c32544888dda17295e5ebb, type: 3}
       propertyPath: m_Name
-      value: Quit Game Button
+      value: Main Menu Button
       objectReference: {fileID: 0}
     - target: {fileID: 6662882528361094408, guid: 4f77437592c32544888dda17295e5ebb, type: 3}
       propertyPath: m_Pivot.x
@@ -732,7 +732,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7504817466177078104, guid: 4f77437592c32544888dda17295e5ebb, type: 3}
       propertyPath: m_text
-      value: Quit Game
+      value: 'Main Menu
+
+'
       objectReference: {fileID: 0}
     - target: {fileID: 8279728067426004303, guid: 4f77437592c32544888dda17295e5ebb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
@@ -752,7 +754,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8279728067426004303, guid: 4f77437592c32544888dda17295e5ebb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGame
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 8279728067426004303, guid: 4f77437592c32544888dda17295e5ebb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
@@ -1345,6 +1347,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93b93fb06466eee41a567f50626458d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MenuManager
+  guidePanel: {fileID: 0}
 --- !u!4 &1608843548
 Transform:
   m_ObjectHideFlags: 0
